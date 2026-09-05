@@ -1,71 +1,39 @@
-[![CI](https://github.com/tejasnayak25/smart-scheduler/actions/workflows/ci.yml/badge.svg)](https://github.com/tejasnayak25/smart-scheduler/actions)
+# Planora 🗓️
 
-## Planora
+### AI-Powered Daily Planning & Smart Scheduling
 
-AI-assisted daily planning app with:
+Planora is an AI-assisted daily planning application that helps users organize tasks, prioritize their work, manage deadlines, and generate an optimized daily schedule.
 
-- task form + priority/deadline
-- schedule generation with chunking/breaks/overflow handling
-- Gemini quick-add from natural language
-- local persistence via Zustand + localStorage
+It combines intelligent scheduling logic with **Google Gemini AI** to make task creation faster and easier using natural language.
 
-## Setup
+---
 
-Install dependencies:
+## ✨ Features
 
-```bash
-npm install
-```
+- 📝 **Task Management** — Add, edit, and manage daily tasks
+- 🎯 **Priority Management** — Organize tasks based on priority
+- ⏰ **Deadline Support** — Set deadlines for important tasks
+- 🧠 **Smart Scheduling** — Automatically generate an optimized daily schedule
+- ⏱️ **Task Chunking** — Break longer tasks into manageable sessions
+- ☕ **Break Management** — Automatically include breaks between tasks
+- 📋 **Overflow Handling** — Handles tasks that cannot fit into the available schedule
+- 🤖 **Gemini AI Quick Add** — Create multiple tasks using natural language
+- 💾 **Local Persistence** — Tasks are saved using Zustand and localStorage
+- 📱 **Responsive UI** — Designed to work across different screen sizes
 
-Create `.env.local`:
+---
 
-```bash
-GEMINI_API_KEY=your_api_key_here
-# optional
-GEMINI_MODEL=gemini-3.1-flash-lite-preview
-```
+## 🤖 AI Quick Add
 
-## Development
+Planora uses **Google Gemini AI** to convert natural language into structured tasks.
 
-Run the development server:
+For example, instead of manually entering every task, you can type:
 
-```bash
-npm run dev
-```
+> Study Python for 2 hours and complete my SQL assignment for 1 hour.
 
-Open [http://localhost:3000](http://localhost:3000).
+Gemini processes the input and generates structured tasks that can be reviewed and added to your schedule.
 
-## Testing
+### Example Inputs
 
-Run tests once:
-
-```bash
-npm run test
-```
-
-Run in watch mode:
-
-```bash
-npm run test:watch
-```
-
-Current tests include:
-
-- scheduler logic (`src/utils/scheduler.test.js`)
-- Gemini output normalization (`src/app/api/gemini/route.test.js`)
-
-## AI Quick Add
-
-Use the "Quick Add with Gemini" field to type natural language such as:
-
-- "study math for 2 hours and finish assignment"
-- "gym 45 min, review notes 30 min, prep slides 60 min"
-
-The app parses suggestions, lets you review/edit, and then add all.
-
-## Build & Start
-
-```bash
-npm run build
-npm run start
-```
+```text
+Study Python for 2 hours and complete my SQL assignment for 1 hour.

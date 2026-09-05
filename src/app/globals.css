@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+}
+
+@layer base {
+  button, [role="button"] {
+    cursor: pointer;
+  }
+
+  :root {
+    color-scheme: light;
+    /* Light theme tokens (improved contrast and softer surfaces) */
+    --background: #f6f7fb; /* page background */
+    --foreground: #0f1720; /* main text - darker for contrast */
+    --muted: #eef1f7; /* subtle surface for inputs/cards */
+    --card: #ffffff; /* card surface */
+    --muted-foreground: #556077; /* secondary text */
+    --border: rgba(15,23,42,0.06);
+    --primary: #0063ff; /* primary brand blue */
+    --primary-foreground: #ffffff;
+    --focus: 0 0 0 4px rgba(0,99,255,0.08);
+  }
+  .dark {
+    /* Dark theme tokens */
+    color-scheme: dark;
+    --background: #0b0b0d; /* softer than pure black */
+    --foreground: #f2f2f7;
+    --muted: #1c1c1e; /* input/card surface in dark */
+    --card: #111216; /* card surface */
+    --muted-foreground: #9aa4b2; /* secondary text */
+    --border: rgba(255,255,255,0.06);
+    --primary: #0a84ff; /* iOS Dark Blue */
+    --primary-foreground: #ffffff;
+    --focus: 0 0 0 4px rgba(10,132,255,0.10);
+  }
+}
+
+@layer utilities {
+  .premium-glass {
+    background: var(--card);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 24px rgba(15,23,42,0.04);
+    color: var(--foreground);
+    /* keep dark variant behavior via Tailwind utilities */
+  }
+
+  .premium-glass-hover {
+    transition: all 0.25s ease;
+    /* subtle hover lift */
+    transform: translateZ(0);
+  }
+
+  .glass-card {
+    background: linear-gradient(180deg, var(--card), var(--card));
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(15,23,42,0.04);
+    color: var(--foreground);
+  }
+}
+
+/* Dark-specific tweaks for elevated surfaces */
+.dark .premium-glass {
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+}
+.dark .glass-card {
+  box-shadow: 0 4px 12px rgba(2,6,23,0.6);
+}
+
+/* Utility surfaces for components to use instead of hard-coded hex values */
+.muted-bg {
+  background: var(--muted) !important;
+}
+.surface {
+  background: var(--card) !important;
+  color: var(--foreground) !important;
+}
+.text-muted {
+  color: var(--muted-foreground) !important;
+}
+.focus-ring:focus {
+  box-shadow: var(--focus) !important;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: inherit;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}

@@ -29,11 +29,11 @@ Planora uses **Google Gemini AI** to convert natural language into structured ta
 
 For example, instead of manually entering every task, you can type:
 
-> Study Python for 2 hours and complete my SQL assignment for 1 hour.
+> Study Machine Learning for 3 hours and complete my Cryptography assignment for 1 hour.
 
 Gemini processes the input and generates structured tasks that can be reviewed and added to your schedule.
 
 ### Example Inputs
 
 ```text
-Study Python for 2 hours and complete my SQL assignment for 1 hour.
+Study Machine Learning for 3 hours and complete my Cryptography assignment for 1 hour.
